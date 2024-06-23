@@ -40,9 +40,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 30.0),
                   Image.network(
-                    'https://www.gettyimages.fr/detail/photo/flag-of-senegal-image-libre-de-droits/1393366892', // URL de votre image en ligne
+                    'https://th.bing.com/th/id/OIP.TeCuHPXgCpC2PKSlrCT0SQHaHa?rs=1&pid=ImgDetMain', // URL de votre image en ligne
                     width: 200.0, // Largeur souhaitée de l'image
                     height: 200.0, // Hauteur souhaitée de l'image
                     fit: BoxFit
@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 50.0),
+            SizedBox(height: 60.0),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, '/categories');
