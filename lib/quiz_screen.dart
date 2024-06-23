@@ -239,24 +239,177 @@ class QuizScreenState extends State<QuizScreen> {
     {
       'category': 'Histoire',
       'questionText':
-          'Quel ancien royaume du Sénégal était connu pour son commerce de Or et du sel?',
+          'Quel roi du royaume du Sine est célèbre pour sa résistance contre les forces coloniales françaises ?',
       'imageUrl':
           'https://th.bing.com/th/id/OIP.gQ8kH6lx47hECQjK-kRoswHaEc?rs=1&pid=ImgDetMain',
       'answers': [
-        'Royaume de Tekrour',
-        'Royaume du Jolof',
-        'Royaume de Cayor',
+        'Lat Dior Diop',
+        ' Maad a Sinig Kumba Ndoffène Famak Joof',
+        ' Almamy Samory Touré',
       ],
-      'correctAnswer': 'Royaume de Tekrour',
+      'correctAnswer': 'Maad a Sinig Kumba Ndoffène Famak Joof',
+    },
+    {
+      'category': 'Histoire',
+      'questionText':
+          'Qui était le fondateur de Empire du Djolof, un des premiers royaumes sénégalais ?',
+      'imageUrl':
+          'https://www.afrik.com/wp-content/uploads/2024/01/ndiadiane-ndiaye-696x392.jpg',
+      'answers': [
+        'Lat Dior Diop',
+        'Ndiadiane Ndiaye',
+        ' Maba Diakhou Bâ',
+      ],
+      'correctAnswer': 'Ndiadiane Ndiaye',
     },
 
     {
-      'category': 'Capitale',
-      'questionText': 'Quelle est la capitale du Sénégal?',
+      'category': 'Histoire',
+      'questionText':
+          'Quelle était la principale ressource exportée par le Sénégal au cours de la période coloniale ?',
       'imageUrl':
-          'https://th.bing.com/th/id/OIP.JWsm1NHDC1wzoSE166kEewHaE7?rs=1&pid=ImgDetMain',
-      'answers': ['Dakar', 'Saint-Louis', 'Thiès', 'Kaolack'],
-      'correctAnswer': 'Dakar',
+          'https://th.bing.com/th/id/R.207393a605ade7d86da0187bc3c5685f?rik=qFLQfMm9NNOjuQ&pid=ImgRaw&r=0&sres=1&sresct=1',
+      'answers': [
+        'Le pétrole',
+        'arachide',
+        'Le coton',
+      ],
+      'correctAnswer': 'arachide',
+    },
+
+    {
+      'category': 'Histoire',
+      'questionText':
+          'Quel grand penseur sénégalais a écrit "Nations Nègres et Culture" et a profondément influencé la pensée africaine ?',
+      'imageUrl':
+          'https://i0.wp.com/laviesenegalaise.com/wp-content/uploads/2020/02/Cheikh-Anta-Diop.jpg?fit=750%2C979&ssl=1',
+      'answers': [
+        'Léopold Sédar Senghor',
+        'Cheikh Anta Diop',
+        ' Amadou Hampâté Bâ',
+      ],
+      'correctAnswer': 'Cheikh Anta Diop',
+    },
+
+    {
+      'category': 'Sport',
+      'questionText':
+          'Quel joueur sénégalais a remporté la Ligue des champions de UEFA avec Liverpool en 2019"?',
+      'imageUrl': '',
+      'answers': [
+        'Sadio Mané',
+        'Kalidou Koulibaly',
+        'Cheikhou Kouyaté',
+      ],
+      'correctAnswer': 'Sadio Mané',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'En quelle année le Sénégal a-t-il participé pour la première fois à la Coupe du monde de la FIFA ?',
+      'imageUrl': '',
+      'answers': [
+        '2010',
+        '2002',
+        '1998',
+      ],
+      'correctAnswer': '2002',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'Qui a marqué le but en or contre la Suède lors de la Coupe du monde 2002 ?',
+      'imageUrl': '',
+      'answers': [
+        'El Hadji Diouf',
+        'Salif Diao',
+        'Henri Camara',
+      ],
+      'correctAnswer': 'Henri Camara',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'Quel est le surnom de équipe nationale de football du Sénégal ?',
+      'imageUrl': '',
+      'answers': [
+        'Les Éléphants',
+        'Les Lions de la Téranga',
+        'Les Aigles',
+      ],
+      'correctAnswer': 'Les Lions de la Téranga',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'Qui a été le premier entraîneur sénégalais à qualifier le Sénégal pour la Coupe du monde ?',
+      'imageUrl': '',
+      'answers': [
+        'Bruno Metsu',
+        'Aliou Cissé',
+        'Abdoulaye Sarr',
+      ],
+      'correctAnswer': 'Bruno Metsu',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'En quelle année le Sénégal a-t-il remporté la Coupe Afrique des Nations (CAN) pour la première fois ?',
+      'imageUrl': '',
+      'answers': [
+        '2002',
+        '2019',
+        '2022',
+      ],
+      'correctAnswer': '2022',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          ' Quel joueur sénégalais a marqué le premier but de la Coupe du monde 2002 contre la France ?',
+      'imageUrl': '',
+      'answers': [
+        'Pape Bouba Diop',
+        'El Hadji Diouf',
+        'Khalilou Fadiga',
+      ],
+      'correctAnswer': 'Pape Bouba Diop',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          ' Quel joueur sénégalais a marqué le premier but de la Coupe du monde 2002 contre la France ?',
+      'imageUrl': '',
+      'answers': [
+        'Pape Bouba Diop',
+        'El Hadji Diouf',
+        'Khalilou Fadiga',
+      ],
+      'correctAnswer': 'Pape Bouba Diop',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          ' Quel club sénégalais a remporté le championnat national le plus de fois ?',
+      'imageUrl': '',
+      'answers': [
+        'Casa Sports',
+        'Génération Foot',
+        'ASC jaaraf',
+      ],
+      'correctAnswer': 'ASC jaaraf',
+    },
+    {
+      'category': 'Sport',
+      'questionText':
+          'Quel joueur sénégalais a joué pour Chelsea et Everton en Premier League anglaise ? ',
+      'imageUrl': '',
+      'answers': [
+        'Papiss Cissé',
+        'Demba Ba',
+        'Idrissa Gueye',
+      ],
+      'correctAnswer': 'Demba Ba',
     },
 
     {
@@ -265,6 +418,127 @@ class QuizScreenState extends State<QuizScreen> {
       'imageUrl':
           'https://th.bing.com/th/id/OIP.XF1WCvDPkg3oFg2Ap069wwHaIz?rs=1&pid=ImgDetMain',
       'answers': ['Thiéboudiène', 'Yassa', 'Mafé', 'Thiakry'],
+      'correctAnswer': 'Thiéboudiène',
+    },
+
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quelle est la principale différence entre le Yassa et le Mafé ?',
+      'imageUrl': '',
+      'answers': [
+        'Le Yassa utilise du citron, le Mafé utilise de arachide',
+        'Le Yassa est végétarien, le Mafé est à base de viande',
+        'Le Yassa est un dessert, le Mafé est un plat principal',
+      ],
+      'correctAnswer':
+          'Le Yassa utilise du citron, le Mafé utilise de arachide',
+    },
+
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel dessert sénégalais est fait à base de couscous sucré ?',
+      'imageUrl': '',
+      'answers': [
+        'Sombi',
+        'Thiakry',
+        'Banana Bread',
+      ],
+      'correctAnswer': 'Thiakry',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel type de poisson est le plus souvent utilisé dans le Thiéboudiène ?',
+      'imageUrl': '',
+      'answers': [
+        'Saumon',
+        'Tilapia',
+        'Thiof',
+      ],
+      'correctAnswer': 'Thiof',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          ' Quelle est la principale base de la cuisine sénégalaise ?',
+      'imageUrl': '',
+      'answers': [
+        'Riz',
+        'Pâtes',
+        'Pommes de terre',
+      ],
+      'correctAnswer': 'Riz',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel fruit est souvent utilisé pour préparer la boisson "Bouye" ?',
+      'imageUrl': '',
+      'answers': [
+        'Fruit du baobab',
+        'Mangue',
+        'Goyave',
+      ],
+      'correctAnswer': 'Fruit du baobab',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel dessert sénégalais est fait à base de riz au lait de coco ?',
+      'imageUrl': '',
+      'answers': [
+        'Banana Cake',
+        'Sombi',
+        'Thiakry',
+      ],
+      'correctAnswer': 'Sombi',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText': 'Quel plat sénégalais les homme aiment pas',
+      'imageUrl': '',
+      'answers': [
+        'Sauce viande',
+        'Mafé',
+        'Domadar',
+      ],
+      'correctAnswer': 'Domadar',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel plat sénégalais est fait avec du riz, du poulet mariné au citron et aux oignons ?',
+      'imageUrl': '',
+      'answers': [
+        'Yassa Poulet',
+        'Thiou',
+        'Mafé Poulet',
+      ],
+      'correctAnswer': 'Yassa Poulet',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText':
+          'Quel ingrédient principal est utilisé dans le Thiéboudiène ?',
+      'imageUrl': '',
+      'answers': [
+        'Pâtes',
+        'Riz',
+        'Maïs',
+      ],
+      'correctAnswer': 'Riz',
+    },
+    {
+      'category': 'Cuisine',
+      'questionText': 'Quel est le plat national du Sénégal ?',
+      'imageUrl': '',
+      'answers': [
+        'Thiéboudiène',
+        'Domadar',
+        'Mafé',
+      ],
       'correctAnswer': 'Thiéboudiène',
     },
     // Ajoutez plus de questions ici pour chaque catégorie
