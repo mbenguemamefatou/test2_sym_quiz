@@ -51,7 +51,7 @@ class QuizScreenState extends State<QuizScreen> {
           'https://th.bing.com/th/id/OIP.KsvRonA6a60XjF1WCcF6CAHaHa?rs=1&pid=ImgDetMain',
       'answers': [
         'Coumba Gawlo',
-        'Viviane chisid',
+        'Viviane chidid',
         'Dior Mbaye',
       ],
       'correctAnswer': 'Coumba Gawlo',
@@ -90,7 +90,7 @@ class QuizScreenState extends State<QuizScreen> {
       'questionText':
           'Quel artiste sénégalais est souvent surnommé le "Golden Boy" ?',
       'imageUrl':
-          'https://senegal7.com/wp-content/uploads/2023/01/Wally-Seck.jpg',
+          'https://th.bing.com/th/id/OIP.HQveIncDGlblyaRiu-TfkwHaEK?rs=1&pid=ImgDetMain',
       'answers': [
         'Pape Diouf',
         'Wally Seck',
@@ -144,7 +144,7 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Musique',
       'questionText':
           'Quelle chanson a été composée par Narah Diouf et Jeeba ?',
-      'imageUrl': 'https://i.ytimg.com/vi/FgfzJJH3l3A/maxresdefault.jpg',
+      'imageUrl': 'https://i.ytimg.com/vi/RNYJvvJ2CWs/maxresdefault.jpg',
       'answers': [
         'Yow Rek',
         'Xarit',
@@ -197,12 +197,12 @@ class QuizScreenState extends State<QuizScreen> {
     {
       'category': 'Histoire',
       'questionText':
-          'Qui a succédé à Léopold Sédar Senghor en tant que président du Sénégal?',
+          'Qui a succédé à Macky Sall en tant que président du Sénégal?',
       'imageUrl':
-          'https://www.leral.net/photo/art/grande/9587025-15410754.jpg?v=1464688096',
+          'https://th.bing.com/th/id/OIP.r8Ga_-uIfwwqOLk3DWbssQAAAA?rs=1&pid=ImgDetMain',
       'answers': [
         'Macky Sall',
-        'Abdou Diouf',
+        'Bassirou Diomaye Faye',
         'Abdoulaye Wade',
       ],
       'correctAnswer': 'Abdou Diouf',
@@ -254,7 +254,7 @@ class QuizScreenState extends State<QuizScreen> {
       'questionText':
           'Qui était le fondateur de Empire du Djolof, un des premiers royaumes sénégalais ?',
       'imageUrl':
-          'https://www.afrik.com/wp-content/uploads/2024/01/ndiadiane-ndiaye-696x392.jpg',
+          'https://th.bing.com/th/id/R.40f088b374a8a24360ff2b1d8882b339?rik=Ctp%2bpUb%2fj745zA&riu=http%3a%2f%2frootsmagazine.fr%2fwp-content%2fuploads%2f2020%2f03%2fado.jpg&ehk=m%2bKsZx%2bndVanENJCy5IoINz%2f9aBk3eF7uiUnUOmZ6Wo%3d&risl=&pid=ImgRaw&r=0',
       'answers': [
         'Lat Dior Diop',
         'Ndiadiane Ndiaye',
@@ -360,7 +360,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'En quelle année le Sénégal a-t-il remporté la Coupe Afrique des Nations (CAN) pour la première fois ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.6ZbnWNt9WnVKWvTQ2HzTXQAAAA?rs=1&pid=ImgDetMain',
       'answers': [
         '2002',
         '2019',
@@ -413,8 +414,12 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText': 'Quel est le plat national du Sénégal?',
       'imageUrl':
-          'https://th.bing.com/th/id/OIP.XF1WCvDPkg3oFg2Ap069wwHaIz?rs=1&pid=ImgDetMain',
-      'answers': ['Thiéboudiène', 'Yassa', 'Mafé', 'Thiakry'],
+          'https://th.bing.com/th/id/OIP.ycv4E7a5zX66viFC4YxLgwAAAA?rs=1&pid=ImgDetMain',
+      'answers': [
+        'Thiéboudiène',
+        'Yassa',
+        'Mafé',
+      ],
       'correctAnswer': 'Thiéboudiène',
     },
 
@@ -422,7 +427,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quelle est la principale différence entre le Yassa et le Mafé ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.99TthJzlPz7Oq8AbChcPRgHaFp?rs=1&pid=ImgDetMain',
       'answers': [
         'Le Yassa utilise du citron, le Mafé utilise de arachide',
         'Le Yassa est végétarien, le Mafé est à base de viande',
@@ -505,7 +511,7 @@ class QuizScreenState extends State<QuizScreen> {
       'answers': [
         'Sauce viande',
         'Mafé',
-        'Domadar',
+        'Domada',
       ],
       'correctAnswer': 'Domada',
     },
@@ -525,26 +531,28 @@ class QuizScreenState extends State<QuizScreen> {
     {
       'category': 'Cuisine',
       'questionText':
-          'Quel ingrédient principal est utilisé dans le Thiéboudiène ?',
+          'Le "Thiébou Yapp" est un plat sénégalais à base de quoi ?',
       'imageUrl':
-          'https://th.bing.com/th/id/R.a637c1fb596fbd9522f68e22566993fd?rik=2AdvxjCXQd85XQ&pid=ImgRaw&r=0',
+          'https://th.bing.com/th/id/R.8b6a56d63f0fa5d1d5f77c896ffb361a?rik=ZvbtJtpvfOsGgg&pid=ImgRaw&r=0',
       'answers': [
-        'Pâtes',
-        'Riz',
-        'Maïs',
+        'Riz et poisson',
+        'Riz et poulet',
+        'Riz et viande',
       ],
-      'correctAnswer': 'Riz',
+      'correctAnswer': 'Riz et mouton',
     },
     {
       'category': 'Cuisine',
-      'questionText': 'Quel est le plat national du Sénégal ?',
-      'imageUrl': '',
+      'questionText':
+          'Quelle est la boisson traditionnelle sénégalaise faite de fleurs hibiscus ?',
+      'imageUrl':
+          'https://th.bing.com/th?id=OIP.nKfCsZKKFfSW8s6W1g92AgHaJ4&w=200&h=200&c=9&rs=1&qlt=99&o=6&dpr=1.3&pid=13.1',
       'answers': [
-        'Thiéboudiène',
-        'Domadar',
-        'Mafé',
+        'Ataya',
+        'Bissap',
+        'Kinkeliba',
       ],
-      'correctAnswer': 'Thiéboudiène',
+      'correctAnswer': 'Bissap',
     },
     // Ajoutez plus de questions ici pour chaque catégorie
   ];
@@ -608,18 +616,21 @@ class QuizScreenState extends State<QuizScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.network(
-                    filteredQuestions[questionIndex]['imageUrl'] as String,
-                    height: 110,
-                    fit: BoxFit.cover,
+                  Container(
+                    width: 115,
+                    child: Image.network(
+                      filteredQuestions[questionIndex]['imageUrl'] as String,
+                      height: 190,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 12),
                   Text(
                     filteredQuestions[questionIndex]['questionText'] as String,
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 12),
                   ...(filteredQuestions[questionIndex]['answers']
                           as List<String>)
                       .map((answer) {
@@ -645,7 +656,7 @@ class QuizScreenState extends State<QuizScreen> {
                             borderRadius: BorderRadius.circular(30.0),
                           ),
                           textStyle: TextStyle(
-                            fontSize: 18,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -662,7 +673,7 @@ class QuizScreenState extends State<QuizScreen> {
                             ? 'Bonne réponse!'
                             : 'Mauvaise réponse! La bonne réponse était : ${filteredQuestions[questionIndex]['correctAnswer']}',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: filteredQuestions[questionIndex]
                                       ['correctAnswer'] ==
