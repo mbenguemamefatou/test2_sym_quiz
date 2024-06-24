@@ -28,7 +28,7 @@ class CategoryScreen extends StatelessWidget {
               SizedBox(height: 20),
               CategoryButton(category: 'Histoire', icon: Icons.history_edu),
               SizedBox(height: 20),
-              CategoryButton(category: 'Capitale', icon: Icons.location_city),
+              CategoryButton(category: 'Sport', icon: Icons.sports_soccer),
               SizedBox(height: 20),
               CategoryButton(category: 'Cuisine', icon: Icons.restaurant_menu),
             ],

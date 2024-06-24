@@ -295,7 +295,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'Quel joueur sénégalais a remporté la Ligue des champions de UEFA avec Liverpool en 2019"?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.694713990c3c835cafbd23f43a41a92d?rik=lI6tI0be6aR9Qg&pid=ImgRaw&r=0',
       'answers': [
         'Sadio Mané',
         'Kalidou Koulibaly',
@@ -307,7 +308,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'En quelle année le Sénégal a-t-il participé pour la première fois à la Coupe du monde de la FIFA ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.fa2c9e25770dd5352d3d7b45222acbfa?rik=rbEr8K14e0SI6Q&riu=http%3a%2f%2fsport24.lefigaro.fr%2fvar%2fplain_site%2fstorage%2fimages%2ffootball%2fcoupe-du-monde%2factualites%2fune-coupe-du-monde-a-40-equipes-la-fifa-y-reflechit-781851%2f19541423-1-fre-FR%2fUne-Coupe-du-monde-a-40-equipes-La-Fifa-y-reflechit.jpg&ehk=SFWp1iBpb%2bivB0Ntuc33VbM%2bjS4%2bzvr%2bm4nLavE2PAQ%3d&risl=&pid=ImgRaw&r=0',
       'answers': [
         '2010',
         '2002',
@@ -319,7 +321,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'Qui a marqué le but en or contre la Suède lors de la Coupe du monde 2002 ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.U21GUgtIGNh9AzTOxmRAcQHaEw?rs=1&pid=ImgDetMain',
       'answers': [
         'El Hadji Diouf',
         'Salif Diao',
@@ -331,7 +334,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'Quel est le surnom de équipe nationale de football du Sénégal ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.69251c1bdae041f8e7e9ce8377f850bc?rik=tXDTgkcetxUW%2bA&pid=ImgRaw&r=0&sres=1&sresct=1',
       'answers': [
         'Les Éléphants',
         'Les Lions de la Téranga',
@@ -343,7 +347,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'Qui a été le premier entraîneur sénégalais à qualifier le Sénégal pour la Coupe du monde ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.zAockPWApgN2CW9w7ji8iwHaEx?rs=1&pid=ImgDetMain',
       'answers': [
         'Bruno Metsu',
         'Aliou Cissé',
@@ -367,7 +372,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           ' Quel joueur sénégalais a marqué le premier but de la Coupe du monde 2002 contre la France ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.iMFX7ekkNbvicMiR1cDRcAHaE8?rs=1&pid=ImgDetMain',
       'answers': [
         'Pape Bouba Diop',
         'El Hadji Diouf',
@@ -375,23 +381,13 @@ class QuizScreenState extends State<QuizScreen> {
       ],
       'correctAnswer': 'Pape Bouba Diop',
     },
-    {
-      'category': 'Sport',
-      'questionText':
-          ' Quel joueur sénégalais a marqué le premier but de la Coupe du monde 2002 contre la France ?',
-      'imageUrl': '',
-      'answers': [
-        'Pape Bouba Diop',
-        'El Hadji Diouf',
-        'Khalilou Fadiga',
-      ],
-      'correctAnswer': 'Pape Bouba Diop',
-    },
+
     {
       'category': 'Sport',
       'questionText':
           ' Quel club sénégalais a remporté le championnat national le plus de fois ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.4217738ff123a47e999daf1881e6967e?rik=Fd6JJb89saYklg&pid=ImgRaw&r=0',
       'answers': [
         'Casa Sports',
         'Génération Foot',
@@ -403,7 +399,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Sport',
       'questionText':
           'Quel joueur sénégalais a joué pour Chelsea et Everton en Premier League anglaise ? ',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.S3eiWZhMobPsMqifP5WxZAHaFm?rs=1&pid=ImgDetMain',
       'answers': [
         'Papiss Cissé',
         'Demba Ba',
@@ -439,7 +436,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quel dessert sénégalais est fait à base de couscous sucré ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.xy3W5jX-xFElo-9b096jtwHaHa?rs=1&pid=ImgDetMain',
       'answers': [
         'Sombi',
         'Thiakry',
@@ -451,7 +449,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quel type de poisson est le plus souvent utilisé dans le Thiéboudiène ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/OIP.A4vH9UEeDaexbb8JY725jgHaE6?rs=1&pid=ImgDetMain',
       'answers': [
         'Saumon',
         'Tilapia',
@@ -463,7 +462,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           ' Quelle est la principale base de la cuisine sénégalaise ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://www.leriz.fr/wp-content/uploads/2018/01/Le-riz-raffinage2.jpg',
       'answers': [
         'Riz',
         'Pâtes',
@@ -475,7 +475,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quel fruit est souvent utilisé pour préparer la boisson "Bouye" ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.cfd706454b46f8a367bcb7081c80a30d?rik=IFXeNc1AONWt6Q&riu=http%3a%2f%2fmedicinalherbals.net%2fwp-content%2fuploads%2f2018%2f01%2fBaobab-Fruit.jpg&ehk=RTkZYrrYIYpeD62ZrCBey7Q0eqzL2pp4%2fOZQMIBXrDs%3d&risl=&pid=ImgRaw&r=0',
       'answers': [
         'Fruit du baobab',
         'Mangue',
@@ -487,7 +488,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quel dessert sénégalais est fait à base de riz au lait de coco ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://cdn.tasteatlas.com/images/dishes/b30130535a804b278b55bad5539c2604.jpg?mw=1300',
       'answers': [
         'Banana Cake',
         'Sombi',
@@ -498,19 +500,21 @@ class QuizScreenState extends State<QuizScreen> {
     {
       'category': 'Cuisine',
       'questionText': 'Quel plat sénégalais les homme aiment pas',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.5ca5aca1bed880a83a8deac6d88b24de?rik=xm0zQehfD3Z8Nw&riu=http%3a%2f%2fsenecuisine.com%2fwp-content%2fuploads%2f2011%2f05%2fDomoda-viande.jpg&ehk=fRGp6lAuGVdlvvsoFawyd%2fRsjZPace7iWteE5CMn77M%3d&risl=&pid=ImgRaw&r=0',
       'answers': [
         'Sauce viande',
         'Mafé',
         'Domadar',
       ],
-      'correctAnswer': 'Domadar',
+      'correctAnswer': 'Domada',
     },
     {
       'category': 'Cuisine',
       'questionText':
           'Quel plat sénégalais est fait avec du riz, du poulet mariné au citron et aux oignons ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.73da7202c1d0a60b43f285bdd3eeea40?rik=XWfcy0qccxqGXA&riu=http%3a%2f%2fsenecuisine.com%2fwp-content%2fuploads%2f2018%2f08%2fRecette-de-Yassa-au-poulet.jpg&ehk=Db%2fUla2UJx8Zuixt3jVxCF1AslToDeYAAvsXhZiZ%2bOE%3d&risl=&pid=ImgRaw&r=0',
       'answers': [
         'Yassa Poulet',
         'Thiou',
@@ -522,7 +526,8 @@ class QuizScreenState extends State<QuizScreen> {
       'category': 'Cuisine',
       'questionText':
           'Quel ingrédient principal est utilisé dans le Thiéboudiène ?',
-      'imageUrl': '',
+      'imageUrl':
+          'https://th.bing.com/th/id/R.a637c1fb596fbd9522f68e22566993fd?rik=2AdvxjCXQd85XQ&pid=ImgRaw&r=0',
       'answers': [
         'Pâtes',
         'Riz',
@@ -605,7 +610,7 @@ class QuizScreenState extends State<QuizScreen> {
                 children: [
                   Image.network(
                     filteredQuestions[questionIndex]['imageUrl'] as String,
-                    height: 200,
+                    height: 110,
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),
