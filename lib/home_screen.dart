@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  HomeScreenState createState() => HomeScreenState();
+}
+
+class HomeScreenState extends State<HomeScreen> {
+  String _playerName = 'Joueur';
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +30,16 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              'Bienvenue, $_playerName!',
+              style: TextStyle(
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 10.0),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -52,26 +69,60 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 60.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/categories');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.teal,
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/categories');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.teal,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  icon: Icon(Icons.play_arrow, size: 30.0),
+                  label: Text(
+                    'Commencer',
+                    style: TextStyle(
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-              icon: Icon(Icons.play_arrow, size: 30.0),
-              label: Text(
-                'Commencer',
-                style: TextStyle(
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () async {
+                    final playerName =
+                        await Navigator.pushNamed(context, '/login');
+                    if (playerName != null) {
+                      setState(() {
+                        _playerName = playerName as String;
+                      });
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.teal,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Entrer votre nom',
+                    style: TextStyle(
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
