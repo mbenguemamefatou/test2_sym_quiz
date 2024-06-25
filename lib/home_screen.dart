@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,6 +10,24 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
   String _playerName = 'Joueur';
+  int score = 0;
+
+  Future<void> _saveUserScore(String playerName, int score) async {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    await users.add({
+      'name': playerName,
+      'score': score,
+    });
+  }
+   void _submitScore() {
+    // Appelez cette méthode après avoir terminé le quiz
+    _saveUserScore(_playerName, score);
+  }
+void _onQuizFinished() {
+  // Logique pour déterminer que le quiz est terminé
+  _submitScore(); // Enregistrer le score une fois le quiz terminé
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -130,3 +149,4 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
