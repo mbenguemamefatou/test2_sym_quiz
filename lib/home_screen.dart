@@ -19,15 +19,16 @@ class HomeScreenState extends State<HomeScreen> {
       'score': score,
     });
   }
-   void _submitScore() {
+
+  void _submitScore() {
     // Appelez cette méthode après avoir terminé le quiz
     _saveUserScore(_playerName, score);
   }
-void _onQuizFinished() {
-  // Logique pour déterminer que le quiz est terminé
-  _submitScore(); // Enregistrer le score une fois le quiz terminé
-}
 
+  void _onQuizFinished() {
+    // Logique pour déterminer que le quiz est terminé
+    _submitScore(); // Enregistrer le score une fois le quiz terminé
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -149,4 +150,3 @@ void _onQuizFinished() {
     );
   }
 }
-
