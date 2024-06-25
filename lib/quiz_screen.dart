@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 // QuizScreen class
 class QuizScreen extends StatefulWidget {
@@ -15,6 +16,8 @@ class QuizScreenState extends State<QuizScreen> {
   int score = 0;
   bool isAnswered = false;
   String selectedAnswer = '';
+  Timer? timer;
+  int timeLeft = 10; // le temps de lmite pour les questions
 
   final List<Map<String, Object>> questions = [
     {
@@ -565,6 +568,42 @@ class QuizScreenState extends State<QuizScreen> {
     category = ModalRoute.of(context)!.settings.arguments as String;
     filteredQuestions =
         questions.where((q) => q['category'] == category).toList();
+    if (filteredQuestions.isNotEmpty) {
+      startTimer();
+    }
+  }
+
+  void startTimer() {
+    timeLeft = 10; // Reset the time for the next question
+    timer?.cancel(); // Cancel any previous timer
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (timeLeft == 0) {
+        timer.cancel();
+        moveToNextQuestion();
+      } else {
+        setState(() {
+          timeLeft--;
+        });
+      }
+    });
+  }
+
+  void moveToNextQuestion() {
+    setState(() {
+      questionIndex++;
+      isAnswered = false;
+      selectedAnswer = '';
+    });
+
+    if (questionIndex >= filteredQuestions.length) {
+      Navigator.pushNamed(
+        context,
+        '/result',
+        arguments: score,
+      );
+    } else {
+      startTimer();
+    }
   }
 
   void _answerQuestion(String answer) {
@@ -577,20 +616,14 @@ class QuizScreenState extends State<QuizScreen> {
     });
 
     Future.delayed(Duration(seconds: 2), () {
-      setState(() {
-        questionIndex++;
-        isAnswered = false;
-        selectedAnswer = '';
-      });
-
-      if (questionIndex >= filteredQuestions.length) {
-        Navigator.pushNamed(
-          context,
-          '/result',
-          arguments: score,
-        );
-      }
+      moveToNextQuestion();
     });
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -629,6 +662,31 @@ class QuizScreenState extends State<QuizScreen> {
                     filteredQuestions[questionIndex]['questionText'] as String,
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 12),
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      'Time left: $timeLeft seconds',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   SizedBox(height: 12),
                   ...(filteredQuestions[questionIndex]['answers']
