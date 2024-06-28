@@ -5,6 +5,8 @@ import 'package:test3/quiz_screen.dart';
 import 'package:test3/result_screen.dart';
 import 'package:test3/login_screen.dart';
 
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,11 +24,11 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => HomeScreen(),
+          '/': (context) => HomeScreen(''),
           '/categories': (context) => const CategoryScreen(),
           '/quiz': (context) => const QuizScreen(),
           '/result': (context) => const ResultScreen(),
-          '/login': (context) => LoginScreen()
+          '/login': (context) =>  LoginScreen()
         });
   }
 }

@@ -2,25 +2,33 @@ import 'package:flutter/material.dart';
 import 'database_helper.dart';
 
 class HomeScreen extends StatefulWidget {
+  final String initialUserName;
+  
+
+  HomeScreen(this.initialUserName);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _playerName = 'Joueur';
   final dbHelper = DatabaseHelper();
+   late String _playerName;
 
   @override
   void initState() {
     super.initState();
+    _playerName = widget.initialUserName;
     _loadUserName();
   }
 
   Future<void> _loadUserName() async {
-    List<Map<String, dynamic>> users = await dbHelper.getUsers();
+    final users = await dbHelper.getUsers();
     if (users.isNotEmpty) {
+      // Assuming 'name' is stored as 'name' in database
+      String playerName = users.last['name'];
       setState(() {
-        _playerName = users.last['name'];
+        _playerName = playerName;
       });
     }
   }
@@ -50,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.teal,
               ),
               textAlign: TextAlign.center,
             ),
@@ -83,52 +91,57 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 60.0),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/categories');
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.teal,
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/categories');
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.teal,
+                    padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  icon: Icon(Icons.play_arrow, size: 30.0),
+                  label: Text(
+                    'Commencer',
+                    style: TextStyle(
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-              icon: Icon(Icons.play_arrow, size: 30.0),
-              label: Text(
-                'Commencer',
-                style: TextStyle(
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
+                SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () async {
+                    final playerName = await Navigator.pushNamed(context, '/login');
+                    if (playerName != null) {
+                      setState(() {
+                        _playerName = playerName as String;
+                      });
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.teal,
+                    padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Entrer votre nom',
+                    style: TextStyle(
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(width: 20),
-            ElevatedButton(
-              onPressed: () async {
-                final playerName = await Navigator.pushNamed(context, '/login');
-                if (playerName != null && playerName is String) {
-                  setState(() {
-                    _playerName = playerName;
-                  });
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.teal,
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-              ),
-              child: Text(
-                'Entrer votre nom',
-                style: TextStyle(
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              ],
             ),
           ],
         ),

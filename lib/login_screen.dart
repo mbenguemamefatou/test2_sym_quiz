@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'database_helper.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -13,10 +14,15 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _saveUserName() async {
     String userName = _nameController.text.trim();
     if (userName.isNotEmpty) {
-      await dbHelper.insertUser({'name': userName});
-      Navigator.pop(context, userName);
+      await dbHelper.insertUser(userName);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen(userName)),
+      );
     } else {
-      // Ajoutez ici une gestion d'erreur si nécessaire
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Le nom ne peut pas être vide')),
+      );
     }
   }
 
