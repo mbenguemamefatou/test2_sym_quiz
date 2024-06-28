@@ -1,33 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'database_helper.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
   @override
-  HomeScreenState createState() => HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   String _playerName = 'Joueur';
-  int score = 0;
+  final dbHelper = DatabaseHelper();
 
-  Future<void> _saveUserScore(String playerName, int score) async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    await users.add({
-      'name': playerName,
-      'score': score,
-    });
+  @override
+  void initState() {
+    super.initState();
+    _loadUserName();
   }
 
-  void _submitScore() {
-    // Appelez cette méthode après avoir terminé le quiz
-    _saveUserScore(_playerName, score);
-  }
-
-  void _onQuizFinished() {
-    // Logique pour déterminer que le quiz est terminé
-    _submitScore(); // Enregistrer le score une fois le quiz terminé
+  Future<void> _loadUserName() async {
+    List<Map<String, dynamic>> users = await dbHelper.getUsers();
+    if (users.isNotEmpty) {
+      setState(() {
+        _playerName = users.last['name'];
+      });
+    }
   }
 
   @override
@@ -55,7 +50,7 @@ class HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.teal,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
@@ -79,70 +74,61 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 30.0),
                   Image.network(
-                    'https://th.bing.com/th/id/OIP.TeCuHPXgCpC2PKSlrCT0SQHaHa?rs=1&pid=ImgDetMain', // URL de votre image en ligne
-                    width: 200.0, // Largeur souhaitée de l'image
-                    height: 200.0, // Hauteur souhaitée de l'image
-                    fit: BoxFit
-                        .contain, // Ajustement de l'image dans son conteneur
+                    'https://th.bing.com/th/id/OIP.TeCuHPXgCpC2PKSlrCT0SQHaHa?rs=1&pid=ImgDetMain',
+                    width: 200.0,
+                    height: 200.0,
+                    fit: BoxFit.contain,
                   ),
                 ],
               ),
             ),
             SizedBox(height: 60.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/categories');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.teal,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  icon: Icon(Icons.play_arrow, size: 30.0),
-                  label: Text(
-                    'Commencer',
-                    style: TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(context, '/categories');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.teal,
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () async {
-                    final playerName =
-                        await Navigator.pushNamed(context, '/login');
-                    if (playerName != null) {
-                      setState(() {
-                        _playerName = playerName as String;
-                      });
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.teal,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Text(
-                    'Entrer votre nom',
-                    style: TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+              ),
+              icon: Icon(Icons.play_arrow, size: 30.0),
+              label: Text(
+                'Commencer',
+                style: TextStyle(
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
+              ),
+            ),
+            SizedBox(width: 20),
+            ElevatedButton(
+              onPressed: () async {
+                final playerName = await Navigator.pushNamed(context, '/login');
+                if (playerName != null && playerName is String) {
+                  setState(() {
+                    _playerName = playerName;
+                  });
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.teal,
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+              ),
+              child: Text(
+                'Entrer votre nom',
+                style: TextStyle(
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

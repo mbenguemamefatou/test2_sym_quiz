@@ -642,7 +642,8 @@ class QuizScreenState extends State<QuizScreen> {
         backgroundColor: Colors.teal,
         elevation: 0,
       ),
-      body: Padding(
+      body: 
+       Padding(
         padding: const EdgeInsets.all(16.0),
         child: questionIndex < filteredQuestions.length
             ? Column(

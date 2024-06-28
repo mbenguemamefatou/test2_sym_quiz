@@ -4,12 +4,8 @@ import 'package:test3/category_screen.dart';
 import 'package:test3/quiz_screen.dart';
 import 'package:test3/result_screen.dart';
 import 'package:test3/login_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
 
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(const MyApp());
 }
 
@@ -26,11 +22,11 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const HomeScreen(),
+          '/': (context) => HomeScreen(),
           '/categories': (context) => const CategoryScreen(),
           '/quiz': (context) => const QuizScreen(),
           '/result': (context) => const ResultScreen(),
-          '/login': (context) => const LoginScreen()
+          '/login': (context) => LoginScreen()
         });
   }
 }
