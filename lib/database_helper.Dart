@@ -9,7 +9,7 @@ class DatabaseHelper {
   static Database? _database;
 
   factory DatabaseHelper() {
-    return _instance;
+    returnw _instance;
   }
 
   DatabaseHelper._internal();

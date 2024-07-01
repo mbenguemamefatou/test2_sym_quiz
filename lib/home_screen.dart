@@ -1,34 +1,16 @@
 import 'package:flutter/material.dart';
-import 'database_helper.dart';
 
 class HomeScreen extends StatefulWidget {
-  final String userName;
-
-  const HomeScreen({Key? key, required this.userName}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   HomeScreenState createState() => HomeScreenState();
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  final dbHelper = DatabaseHelper();
-  late String _playerName;
-
   @override
   void initState() {
     super.initState();
-    _playerName = widget.userName;
-    loadUserName();
-  }
-
-  Future<void> loadUserName() async {
-    final users = await dbHelper.getUsers();
-    if (users.isNotEmpty) {
-      String playerName = users.last['name'];
-      setState(() {
-        _playerName = playerName;
-      });
-    }
   }
 
   @override
@@ -51,16 +33,6 @@ class HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Bienvenue, $_playerName!',
-              style: const TextStyle(
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10.0),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,

@@ -3,7 +3,7 @@ import 'package:test3/home_screen.dart';
 import 'package:test3/category_screen.dart';
 import 'package:test3/quiz_screen.dart';
 import 'package:test3/result_screen.dart';
-import 'package:test3/login_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.teal,
         ),
-        initialRoute: '/login',
+        initialRoute: '/',
         routes: {
-          '/': (context) => const HomeScreen(userName: ""),
+          '/': (context) => const HomeScreen(),
           '/categories': (context) => const CategoryScreen(),
           '/quiz': (context) => const QuizScreen(),
           '/result': (context) => const ResultScreen(),
-          '/login': (context) => const LoginScreen()
+          
         });
   }
 }
