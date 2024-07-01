@@ -5,8 +5,6 @@ import 'package:test3/quiz_screen.dart';
 import 'package:test3/result_screen.dart';
 import 'package:test3/login_screen.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -19,16 +17,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'culture sénégalaise',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.teal,
         ),
-        initialRoute: '/',
+        initialRoute: '/login',
         routes: {
-          '/': (context) => HomeScreen(''),
+          '/': (context) => const HomeScreen(userName: ""),
           '/categories': (context) => const CategoryScreen(),
           '/quiz': (context) => const QuizScreen(),
           '/result': (context) => const ResultScreen(),
-          '/login': (context) =>  LoginScreen()
+          '/login': (context) => const LoginScreen()
         });
   }
 }

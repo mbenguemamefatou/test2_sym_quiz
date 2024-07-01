@@ -3,25 +3,34 @@ import 'database_helper.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final _nameController = TextEditingController();
+class LoginScreenState extends State<LoginScreen> {
+  final nameController = TextEditingController();
   final dbHelper = DatabaseHelper();
 
-  Future<void> _saveUserName() async {
-    String userName = _nameController.text.trim();
+  Future<void> saveUserName() async {
+    String userName = nameController.text.trim();
     if (userName.isNotEmpty) {
+      // Perform the database operation
       await dbHelper.insertUser(userName);
+
+      // After the async operation, check if the widget is still mounted
+      if (!mounted) return;
+
+      // Use the BuildContext after ensuring the widget is still mounted
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen(userName)),
+        MaterialPageRoute(builder: (context) => HomeScreen(userName: userName)),
       );
     } else {
+      // Show the snackbar without async operation
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Le nom ne peut pas être vide')),
+        const SnackBar(content: Text('Le nom ne peut pas être vide')),
       );
     }
   }
@@ -31,7 +40,9 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text('Entrer votre nom'),
+        title: const Text('Entrer votre nom'),
+        
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -39,13 +50,13 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              controller: _nameController,
-              decoration: InputDecoration(labelText: 'Nom'),
+              controller: nameController,
+              decoration: const InputDecoration(labelText: 'Nom'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: _saveUserName,
-              child: Text('Enregistrer'),
+              onPressed: saveUserName,
+              child: const Text('Enregistrer'),
             ),
           ],
         ),

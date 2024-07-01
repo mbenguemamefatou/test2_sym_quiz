@@ -7,7 +7,7 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Séléctionnez une catégorie',
           style: TextStyle(
             color: Colors.white,
@@ -18,9 +18,9 @@ class CategoryScreen extends StatelessWidget {
         backgroundColor: Colors.teal,
         elevation: 0,
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,19 +43,19 @@ class CategoryButton extends StatelessWidget {
   final String category;
   final IconData icon;
 
-  CategoryButton({required this.category, required this.icon});
+  const CategoryButton({super.key, required this.category, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         backgroundColor: Colors.teal, // background color
         foregroundColor: Colors.white, // text color
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),

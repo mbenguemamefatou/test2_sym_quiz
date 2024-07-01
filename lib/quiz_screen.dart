@@ -29,7 +29,6 @@ class QuizScreenState extends State<QuizScreen> {
         'Dakar Music Festival',
         'Saint-Louis Jazz',
         'Festival de Thies',
-        'Kaay Fecc'
       ],
       'correctAnswer': 'Saint-Louis Jazz',
     },
@@ -576,7 +575,7 @@ class QuizScreenState extends State<QuizScreen> {
   void startTimer() {
     timeLeft = 10; // Reset the time for the next question
     timer?.cancel(); // Cancel any previous timer
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (timeLeft == 0) {
         timer.cancel();
         moveToNextQuestion();
@@ -615,7 +614,7 @@ class QuizScreenState extends State<QuizScreen> {
       }
     });
 
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       moveToNextQuestion();
     });
   }
@@ -633,7 +632,7 @@ class QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: Text(
           ('Quiz - $category'),
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
@@ -642,15 +641,14 @@ class QuizScreenState extends State<QuizScreen> {
         backgroundColor: Colors.teal,
         elevation: 0,
       ),
-      body: 
-       Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: questionIndex < filteredQuestions.length
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
+                  SizedBox(
                     width: 115,
                     child: Image.network(
                       filteredQuestions[questionIndex]['imageUrl'] as String,
@@ -658,15 +656,16 @@ class QuizScreenState extends State<QuizScreen> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Text(
                     filteredQuestions[questionIndex]['questionText'] as String,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
@@ -675,13 +674,13 @@ class QuizScreenState extends State<QuizScreen> {
                           color: Colors.black.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 7,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
                     child: Text(
                       'Time left: $timeLeft seconds',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: Colors.red,
@@ -689,7 +688,7 @@ class QuizScreenState extends State<QuizScreen> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 12),
+                  const SizedBox(height: 12),
                   ...(filteredQuestions[questionIndex]['answers']
                           as List<String>)
                       .map((answer) {
@@ -710,11 +709,11 @@ class QuizScreenState extends State<QuizScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: buttonColor,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 16),
+                          padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
@@ -722,7 +721,7 @@ class QuizScreenState extends State<QuizScreen> {
                         child: Text(answer),
                       ),
                     );
-                  }).toList(),
+                  }),
                   if (isAnswered)
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
@@ -745,7 +744,7 @@ class QuizScreenState extends State<QuizScreen> {
                     ),
                 ],
               )
-            : Center(
+            : const Center(
                 child: CircularProgressIndicator(),
               ),
       ),

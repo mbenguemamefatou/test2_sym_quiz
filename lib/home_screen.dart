@@ -2,30 +2,28 @@ import 'package:flutter/material.dart';
 import 'database_helper.dart';
 
 class HomeScreen extends StatefulWidget {
-  final String initialUserName;
-  
+  final String userName;
 
-  HomeScreen(this.initialUserName);
+  const HomeScreen({Key? key, required this.userName}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
   final dbHelper = DatabaseHelper();
-   late String _playerName;
+  late String _playerName;
 
   @override
   void initState() {
     super.initState();
-    _playerName = widget.initialUserName;
-    _loadUserName();
+    _playerName = widget.userName;
+    loadUserName();
   }
 
-  Future<void> _loadUserName() async {
+  Future<void> loadUserName() async {
     final users = await dbHelper.getUsers();
     if (users.isNotEmpty) {
-      // Assuming 'name' is stored as 'name' in database
       String playerName = users.last['name'];
       setState(() {
         _playerName = playerName;
@@ -38,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Jeu De Culture Sénégalaise',
           style: TextStyle(
             color: Colors.white,
@@ -55,23 +53,23 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text(
               'Bienvenue, $_playerName!',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.teal,
+                color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'Découvrez la Culture Sénégalaise!',
                     style: TextStyle(
                       fontSize: 28.0,
@@ -80,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 30.0),
+                  const SizedBox(height: 30.0),
                   Image.network(
                     'https://th.bing.com/th/id/OIP.TeCuHPXgCpC2PKSlrCT0SQHaHa?rs=1&pid=ImgDetMain',
                     width: 200.0,
@@ -90,58 +88,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 60.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/categories');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.teal,
-                    padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  icon: Icon(Icons.play_arrow, size: 30.0),
-                  label: Text(
-                    'Commencer',
-                    style: TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+            const SizedBox(height: 60.0),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pushNamed(context, '/categories');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.teal,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30.0,
+                  vertical: 15.0,
                 ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () async {
-                    final playerName = await Navigator.pushNamed(context, '/login');
-                    if (playerName != null) {
-                      setState(() {
-                        _playerName = playerName as String;
-                      });
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.teal,
-                    padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  child: Text(
-                    'Entrer votre nom',
-                    style: TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
-              ],
+              ),
+              icon: const Icon(Icons.play_arrow, size: 30.0),
+              label: const Text(
+                'Commencer',
+                style: TextStyle(
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),
