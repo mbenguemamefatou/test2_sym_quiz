@@ -19,7 +19,7 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.teal,
       appBar: AppBar(
         title: const Text(
-          'Jeu De Culture Sénégalaise',
+          ' SYM QUIZ votre jeu de Culture Sénégalaise',
           style: TextStyle(
             color: Colors.white,
             fontSize: 30.0,

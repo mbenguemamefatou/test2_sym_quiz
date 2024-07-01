@@ -641,7 +641,7 @@ class QuizScreenState extends State<QuizScreen> {
         backgroundColor: Colors.teal,
         elevation: 0,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: questionIndex < filteredQuestions.length
             ? Column(
@@ -649,10 +649,10 @@ class QuizScreenState extends State<QuizScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    width: 115,
+                    width: 150,
                     child: Image.network(
                       filteredQuestions[questionIndex]['imageUrl'] as String,
-                      height: 190,
+                      height: 200,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -689,39 +689,41 @@ class QuizScreenState extends State<QuizScreen> {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  ...(filteredQuestions[questionIndex]['answers']
-                          as List<String>)
-                      .map((answer) {
-                    Color buttonColor = Colors.blue;
-                    if (isAnswered) {
-                      if (answer ==
-                          filteredQuestions[questionIndex]['correctAnswer']) {
-                        buttonColor = Colors.green;
-                      } else if (answer == selectedAnswer) {
-                        buttonColor = Colors.red;
+                  ...List<Widget>.from(
+                    (filteredQuestions[questionIndex]['answers']
+                            as List<String>)
+                        .map((answer) {
+                      Color buttonColor = Colors.blue;
+                      if (isAnswered) {
+                        if (answer ==
+                            filteredQuestions[questionIndex]['correctAnswer']) {
+                          buttonColor = Colors.green;
+                        } else if (answer == selectedAnswer) {
+                          buttonColor = Colors.red;
+                        }
                       }
-                    }
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: ElevatedButton(
-                        onPressed:
-                            isAnswered ? null : () => _answerQuestion(answer),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: buttonColor,
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: ElevatedButton(
+                          onPressed:
+                              isAnswered ? null : () => _answerQuestion(answer),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: buttonColor,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                            ),
+                            textStyle: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          textStyle: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          child: Text(answer),
                         ),
-                        child: Text(answer),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+                  ),
                   if (isAnswered)
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
