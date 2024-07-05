@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test3/admin_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -63,7 +65,8 @@ class HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 60.0),
             ElevatedButton.icon(
               onPressed: () {
-                Navigator.pushNamed(context, '/categories');
+                // Navigator.pushNamed(context, '/categories');
+                Navigator.pushNamed(context, '/result');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -84,6 +87,15 @@ class HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdminScreen()),
+                );
+              },
+              child: Text('Accéder à l\'interface administrateur'),
             ),
           ],
         ),

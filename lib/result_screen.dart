@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:test3/admin_screen.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    final int score = ModalRoute.of(context)!.settings.arguments as int;
+    // Récupérer les arguments de la route en toute sécurité
+    final int? score = ModalRoute.of(context)?.settings.arguments as int?;
 
     return Scaffold(
       backgroundColor: Colors.teal,
@@ -26,7 +28,7 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Votre score : $score',
+              'Votre score : ${score ?? 'N/A'}', // Afficher 'N/A' si score est null
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -54,6 +56,15 @@ class ResultScreen extends StatelessWidget {
               ),
               child: const Text('Rejouer'),
             ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => AdminScreen()),
+            //     );
+            //   },
+            //   child: Text('Accéder à l\'interface administrateur'),
+            // ),
           ],
         ),
       ),
